@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UseForm = () => {
+const UseForm = (Validate) => {
   const initialize = {
     username: "",
     email: "",
@@ -21,9 +21,10 @@ const UseForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors(Validate(value));
   };
 
-  return { handleChange, value, handleSubmit };
+  return { handleChange, value, handleSubmit, errors };
 };
 
 export default UseForm;
