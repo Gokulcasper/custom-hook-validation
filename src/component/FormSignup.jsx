@@ -1,6 +1,9 @@
 import React from "react";
+import UseForm from "./hooks/UseForm";
 
 const FormSignup = () => {
+  const { handleChange, value } = UseForm();
+
   return (
     <div>
       <form>
@@ -12,6 +15,8 @@ const FormSignup = () => {
             type="text"
             name="Username"
             placeholder="Enter Your Name"
+            value={value.username}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -21,6 +26,8 @@ const FormSignup = () => {
             type="email"
             name="Email"
             placeholder="Enter Your Email"
+            value={value.email}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -30,6 +37,8 @@ const FormSignup = () => {
             type="password"
             name="Password"
             placeholder="Enter Password"
+            value={value.password}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -39,6 +48,8 @@ const FormSignup = () => {
             type="password"
             name="ConfirmPassword"
             placeholder="Enter Confirm Password"
+            value={value.password2}
+            onChange={handleChange}
           />
         </div>
         <button type="submit">Submit</button>
