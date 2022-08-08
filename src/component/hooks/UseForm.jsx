@@ -8,7 +8,7 @@ const UseForm = () => {
     password2: "",
   };
   const [value, setValue] = useState({ initialize });
-  // const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValue((e) => {
@@ -18,7 +18,12 @@ const UseForm = () => {
       };
     });
   };
-  return { handleChange, value };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return { handleChange, value, handleSubmit };
 };
 
 export default UseForm;

@@ -2,11 +2,11 @@ import React from "react";
 import UseForm from "./hooks/UseForm";
 
 const FormSignup = () => {
-  const { handleChange, value } = UseForm();
+  const { handleChange, value, handleSubmit } = UseForm();
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Get Satarted with us today! create your account</h1>
         <div>
           <label htmlFor="username">username</label>
