@@ -19,6 +19,7 @@ const FormSignup = () => {
             value={value.username}
             onChange={handleChange}
           />
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div>
           <label htmlFor="email">email</label>
@@ -30,6 +31,7 @@ const FormSignup = () => {
             value={value.email}
             onChange={handleChange}
           />
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="password">password</label>
@@ -41,7 +43,9 @@ const FormSignup = () => {
             value={value.password}
             onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>}
         </div>
+
         <div>
           <label htmlFor="password2">password2</label>
           <input
@@ -52,7 +56,9 @@ const FormSignup = () => {
             value={value.password2}
             onChange={handleChange}
           />
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
+
         <button type="submit">Submit</button>
         <span>
           Already have an account? Login <a href="#">Here</a>

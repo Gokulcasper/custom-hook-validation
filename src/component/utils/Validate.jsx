@@ -1,4 +1,5 @@
 export default function Validate(value) {
+  console.log(value);
   let errors = {};
 
   if (!value.username) {
@@ -9,19 +10,16 @@ export default function Validate(value) {
   }
   if (!value.email) {
     errors.email = "Email required";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.email)) {
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value.email)) {
     errors.email = "It shouldnot be a valid email address";
   }
 
   if (!value.password) {
     errors.password = "Password required";
-  } else if (
-    !/^(?=.{8,16})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$/.test(
-      value.password
-    )
-  ) {
+  } else if (value.password.length > 4) {
+    // !/^(?=.{8,16})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$/
     errors.password =
-      "Password should be above 8 characters & include atleast 1 uppercase , 1 number , 1 special character";
+      "Password should be above 4 characters & include atleast 1 uppercase , 1 number , 1 special character";
   }
   if (!value.password2) {
     errors.password2 = "Confirm Password required";
